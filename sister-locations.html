@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sister Locations | 7 Mares Mexican Grill</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --cream: #f5ede0;
+  --sand: #e8d9c4;
+  --terracotta: #c94f2c;
+  --terracotta-light: #e0714e;
+  --forest: #1b3d2f;
+  --forest-light: #2a5c45;
+  --gold: #c9a34e;
+  --charcoal: #1a1612;
+  --text-body: #2d241a;
+  --white: #fff;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(201, 79, 44, 0.12), transparent 28%),
+    linear-gradient(180deg, #f8f0e5 0%, var(--cream) 48%, #efe1cf 100%);
+  color: var(--text-body);
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+a { color: inherit; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(245, 237, 224, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 79, 44, 0.15);
+  transition: padding 0.3s;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
+}
+
+.logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--charcoal);
+}
+
+.logo-sub {
+  font-size: 9px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.65;
+  transition: opacity 0.2s;
+}
+
+nav a:hover { opacity: 1; }
+
+.btn-order,
+.btn-gold,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn-order,
+.btn-gold {
+  background: var(--terracotta);
+  color: var(--white);
+}
+
+.btn-order:hover,
+.btn-gold:hover {
+  background: var(--terracotta-light);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(27, 61, 47, 0.18);
+  color: var(--forest);
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.btn-outline:hover {
+  border-color: rgba(27, 61, 47, 0.4);
+  transform: translateY(-2px);
+}
+
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 144px 48px 72px;
+  overflow: hidden;
+}
+
+.hero-media,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media {
+  background-image: url('https://lirp.cdn-website.com/ec6214ed/dms3rep/multi/opt/Photo+Jul+02+2025-+2+55+33+PM-1920w.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(to top, rgba(26, 22, 18, 0.86) 0%, rgba(26, 22, 18, 0.42) 56%, rgba(26, 22, 18, 0.18) 100%),
+    linear-gradient(to right, rgba(27, 61, 47, 0.48) 0%, rgba(27, 61, 47, 0.06) 60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  color: var(--white);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 38px;
+  height: 1px;
+  background: currentColor;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin-top: 22px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(50px, 8vw, 104px);
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  max-width: 560px;
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 180px));
+  gap: 18px;
+  margin-top: 56px;
+}
+
+.hero-stat {
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.hero-stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hero-stat span {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.intro {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 96px 48px 12px;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1;
+  color: var(--charcoal);
+}
+
+.intro-copy {
+  font-size: 16px;
+  line-height: 1.9;
+  color: rgba(45, 36, 26, 0.76);
+}
+
+.locations {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 48px 104px;
+}
+
+.location-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: 34px;
+  align-items: stretch;
+  margin-top: 34px;
+  padding: 28px;
+  border: 1px solid rgba(45, 36, 26, 0.08);
+  border-radius: 34px;
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 22px 60px rgba(43, 33, 20, 0.08);
+}
+
+.location-card.reverse .location-media {
+  order: 2;
+}
+
+.location-card.reverse .location-copy {
+  order: 1;
+}
+
+.location-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  min-height: 420px;
+  background: var(--sand);
+}
+
+.location-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.location-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px 8px;
+}
+
+.location-kicker {
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(201, 79, 44, 0.8);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(201, 79, 44, 0.12);
+  color: var(--terracotta);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.location-title {
+  margin-top: 14px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 50px);
+  line-height: 0.98;
+  color: var(--charcoal);
+}
+
+.location-address {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(27, 61, 47, 0.88);
+}
+
+.location-contact {
+  margin-top: 22px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(45, 36, 26, 0.64);
+}
+
+.location-description {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(45, 36, 26, 0.82);
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.closing-panel {
+  max-width: 1240px;
+  margin: 0 auto 96px;
+  padding: 0 48px;
+}
+
+.closing-shell {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(27, 61, 47, 0.98), rgba(32, 77, 58, 0.94));
+  color: var(--white);
+}
+
+.closing-shell h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1;
+}
+
+.closing-shell p {
+  margin-top: 16px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.closing-shell .btn-outline {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.closing-shell .btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.44);
+}
+
+footer {
+  padding: 46px 48px 54px;
+  border-top: 1px solid rgba(27, 61, 47, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: var(--charcoal);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(45, 36, 26, 0.72);
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(27, 61, 47, 0.08);
+  color: var(--white);
+  text-decoration: none;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+}
+
+.footer-social-link svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  display: block;
+}
+
+.footer-social-link:hover {
+  background: var(--terracotta);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(45, 36, 26, 0.5);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 960px) {
+  header { padding: 16px 24px; }
+  nav { display: none; }
+  .hero,
+  .intro,
+  .locations,
+  .closing-panel { padding-left: 24px; padding-right: 24px; }
+  .hero { min-height: auto; padding-top: 132px; padding-bottom: 56px; }
+  .hero-stats,
+  .intro-grid,
+  .location-card,
+  .closing-shell {
+    grid-template-columns: 1fr;
+  }
+  .location-card.reverse .location-media,
+  .location-card.reverse .location-copy {
+    order: initial;
+  }
+  .location-media { min-height: 300px; }
+  .closing-actions { justify-content: flex-start; }
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px 48px;
+  }
+  .footer-socials { justify-content: center; }
+}
+</style>
+</head>
+<body>
+<header>
+  <a href="7mares.html#hero" class="logo">
+    <div class="logo-main">7 Mares</div>
+    <div class="logo-sub">Mexican Grill · Williamsburg, VA</div>
+  </a>
+  <nav>
+    <a href="7mares.html#hero">Home</a>
+    <a href="7mares.html#menu">Menu</a>
+    <a href="7mares.html#reviews">Reviews</a>
+    <a href="7mares.html#order">Order</a>
+    <a href="7mares.html#visit">Visit</a>
+  </nav>
+  <a href="7mares.html#order" class="btn-order">Order Pickup</a>
+</header>
+
+<section class="hero">
+  <div class="hero-media" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="eyebrow reveal">Our Restaurant Family</div>
+    <h1 class="reveal reveal-delay-1">The same spirit, five different tables.</h1>
+    <p class="reveal reveal-delay-2">This page keeps the live sister-locations lineup from 7 Mares and presents it in the same coastal, elevated visual language as the main landing page.</p>
+    <div class="hero-cta reveal reveal-delay-3">
+      <a href="#locations" class="btn-gold">Explore Locations</a>
+      <a href="7mares.html" class="btn-outline">Back to 7 Mares</a>
+    </div>
+    <div class="hero-stats reveal reveal-delay-3">
+      <div class="hero-stat">
+        <strong>5</strong>
+        <span>Locations Featured</span>
+      </div>
+      <div class="hero-stat">
+        <strong>4</strong>
+        <span>Virginia Cities</span>
+      </div>
+      <div class="hero-stat">
+        <strong>1</strong>
+        <span>Opening Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="intro">
+    <div class="intro-grid">
+      <div>
+        <div class="section-label reveal">Sister Locations</div>
+        <h2 class="section-title reveal reveal-delay-1">Keep the lineup. Lose the clutter.</h2>
+      </div>
+      <p class="intro-copy reveal reveal-delay-2">The original sister locations page includes Los Bukys Mexican Grill, Plaza Degollado Mexican, Los Primos Mexican Grill, Tres Compadres Mexican, and 7 Mares Mexican Grill. The content below keeps those same stops, descriptions, addresses, and destination links, but with cleaner hierarchy, stronger spacing, and a layout that fits the rest of this project.</p>
+    </div>
+  </section>
+
+  <section class="locations" id="locations">
+    <article class="location-card reveal">
+      <div class="location-media">
+        <img src="https://lirp.cdn-website.com/ec6214ed/dms3rep/multi/opt/Photo-Jul-01-2025--8-18-43-PM-be4b2f10-1920w.jpg" alt="Exterior of Los Bukys Mexican Grill." />
+      </div>
+      <div class="location-copy">
+        <div class="location-kicker">Following the tradition and success of Los Primos</div>
+        <div class="status-pill">Opening Soon</div>
+        <h2 class="location-title">Los Bukys<br />Mexican Grill</h2>
+        <div class="location-address">910 Great Bridge Blvd, Chesapeake VA 23320</div>
+        <div class="location-description">Los Bukys Mexican Grill, set to open in Chesapeake's Great Bridge Boulevard area, brings bold, authentic flavors and a warm neighborhood vibe. From sizzling fajitas and loaded nachos to fresh guacamole made tableside and refreshing margaritas, every dish showcases tradition and care. The festive yet casual atmosphere is ideal for family dinners or enjoying tacos and tequila with friends. With friendly service and a menu that celebrates the essence of great Mexican cuisine, Los Bukys is sure to become a local favorite.</div>
+        <div class="location-actions">
+          <a href="https://maps.google.com/maps?q=910+Great+Bridge+Boulevard%2C+Chesapeake%2C+Virginia+23320%2C+United+States&sll=36.752601,-76.272674" target="_blank" rel="noopener" class="btn-gold">Find Us</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="location-card reverse reveal">
+      <div class="location-media">
+        <img src="https://lirp.cdn-website.com/ec6214ed/dms3rep/multi/opt/Photo-Mar-14-2024--6-10-17-PM--281-29-1920w.jpg" alt="Plaza Degollado Mexican building exterior." />
+      </div>
+      <div class="location-copy">
+        <div class="location-kicker">Savor the soul of Mexico at</div>
+        <h2 class="location-title">Plaza Degollado<br />Mexican</h2>
+        <div class="location-address">198 Newtown Rd, Virginia Beach, VA 23462</div>
+        <div class="location-contact">(757) 937-1337 · plazadegolladoinc@gmail.com</div>
+        <div class="location-description">Plaza Degollado Mexican is a vibrant local hotspot where bold flavors and warm hospitality come together. Located on Newtown Road, this cozy eatery serves up crowd-pleasers like seafood chimichangas, sizzling fajitas, and churros that hit the sweet spot. The atmosphere is casual and welcoming, with fast, friendly service and a menu that caters to everyone, from spicy burrito lovers to kids enjoying kids menu options. Whether you're dining in or grabbing takeout, Plaza Degollado delivers a delicious, no-fuss Mexican experience that keeps folks coming back.</div>
+        <div class="location-actions">
+          <a href="https://maps.google.com/maps?q=198+Newtown+Road%2C+Virginia+Beach%2C+Virginia+23462%2C+United+States&sll=36.84385,-76.1844" target="_blank" rel="noopener" class="btn-gold">Find Us</a>
+          <a href="https://www.plazadegolladomexican.com/" target="_blank" rel="noopener" class="btn-outline">Visit Website</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="location-card reveal">
+      <div class="location-media">
+        <img src="https://lirp.cdn-website.com/ec6214ed/dms3rep/multi/opt/Photo-Apr-08-2025--8-15-01-PM-488c8f84-53d7f7ce-1920w.jpeg" alt="Los Primos Mexican Grill storefront." />
+      </div>
+      <div class="location-copy">
+        <div class="location-kicker">Have you tried</div>
+        <h2 class="location-title">Los Primos<br />Mexican Grill</h2>
+        <div class="location-address">1464 Mount Pleasant, Chesapeake VA 23322</div>
+        <div class="location-contact">(757) 277-9070 · losprimosmexican@gmail.com</div>
+        <div class="location-description">Los Primos Mexican Grill, nestled in the heart of Chesapeake, VA, invites you to indulge in a culinary journey that celebrates authentic Mexican cuisine. From mouthwatering enchiladas verdes to sizzling fajitas and perfectly grilled carne asada, every dish is crafted with love and tradition. The warm and inviting atmosphere makes it the ideal spot for a casual lunch or a lively dinner with friends. Whether you're a local or just visiting, Los Primos promises a delightful taste of Mexico that will leave you craving more.</div>
+        <div class="location-actions">
+          <a href="https://maps.google.com/maps?q=1464+Mount+Pleasant+Road%2C+Chesapeake%2C+Virginia+23322%2C+United+States&sll=36.716947,-76.187333" target="_blank" rel="noopener" class="btn-gold">Find Us</a>
+          <a href="http://www.losprimosmexicangrill.com" target="_blank" rel="noopener" class="btn-outline">Visit Website</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="location-card reverse reveal">
+      <div class="location-media">
+        <img src="https://lirp.cdn-website.com/ec6214ed/dms3rep/multi/opt/Photo-Apr-10-2025--5-47-33-PM-1920w.jpg" alt="Tres Compadres Mexican restaurant exterior." />
+      </div>
+      <div class="location-copy">
+        <div class="location-kicker">Just over the bridge to your right, you'll find</div>
+        <h2 class="location-title">Tres Compadres<br />Mexican</h2>
+        <div class="location-address">241 S Mallory St, Hampton VA 23663</div>
+        <div class="location-contact">(757) 755-3284 · trescompadres22@gmail.com</div>
+        <div class="location-description">Tres Compadres Mexican Grill and Bar brings a festive flair to Hampton's dining scene with bold flavors, generous portions, and a welcoming vibe. Located just minutes from the waterfront, this spot is known for its sizzling fajitas, birria tacos, and creamy guacamole made fresh at your table. The decor is colorful and cozy, with indoor and patio seating, plus a full bar serving up margaritas in every flavor imaginable. Whether you're craving a hearty rice bowl, seafood chimichangas, or a laid-back Taco Tuesday, Tres Compadres delivers a delicious taste of tradition with every bite.</div>
+        <div class="location-actions">
+          <a href="https://maps.google.com/maps?q=241+South+Mallory+Street%2C+Hampton%2C+Virginia+23663%2C+United+States&sll=37.01647,-76.325011" target="_blank" rel="noopener" class="btn-gold">Find Us</a>
+          <a href="https://www.trescompadresmexican.com/" target="_blank" rel="noopener" class="btn-outline">Visit Website</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="location-card reveal">
+      <div class="location-media">
+        <img src="https://lirp.cdn-website.com/ec6214ed/dms3rep/multi/opt/Photo+Jul+02+2025-+2+55+33+PM-1920w.jpg" alt="7 Mares Mexican Grill sign." />
+      </div>
+      <div class="location-copy">
+        <div class="location-kicker">You are here right at the shores of Mexico, Williamsburg</div>
+        <h2 class="location-title">7 Mares<br />Mexican Grill</h2>
+        <div class="location-address">1338 Richmond Rd, Williamsburg VA 23185</div>
+        <div class="location-contact">(757) 920-5550 · 7maresmexican@gmail.com</div>
+        <div class="location-description">7 Mares Mexican Grill boasts an outstanding variety of seafood and authentic Mexican dishes, located conveniently in the heart of Williamsburg's vibrant area on Richmond Rd. Whether you're planning a lunch outing, a cozy dinner, or need takeout or catering services, this restaurant is a top choice for anyone seeking bold flavors and an exceptional dining experience. From refreshing margaritas and creative cocktails to delectable Mexican desserts, there's something to satisfy every craving.</div>
+        <div class="location-actions">
+          <a href="https://maps.google.com/maps?q=1338+Richmond+Road%2C+Williamsburg%2C+Virginia+23185%2C+United+States&sll=37.284952,-76.720323" target="_blank" rel="noopener" class="btn-gold">Find Us</a>
+          <a href="7mares.html#order" class="btn-outline">Order Online</a>
+          <a href="assets/7mares_menu.pdf" target="_blank" rel="noopener" class="btn-outline">View Menu</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="closing-panel reveal">
+    <div class="closing-shell">
+      <div>
+        <div class="section-label" style="color: rgba(201, 163, 78, 0.92);">Next Stop</div>
+        <h2>Jump back into 7 Mares when you're ready.</h2>
+        <p>Keep this page as the sister-locations destination, and send guests back to the main landing page for ordering, menu viewing, reviews, and the Williamsburg visit details.</p>
+      </div>
+      <div class="closing-actions">
+        <a href="7mares.html" class="btn-gold">Back to Home</a>
+        <a href="7mares.html#reviews" class="btn-outline">Read Reviews</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-logo">7 Mares</div>
+  <div class="footer-links">
+    <a href="7mares.html">Home</a>
+    <a href="7mares.html#menu">Menu</a>
+    <a href="#locations">Sister Locations</a>
+    <a href="7mares.html#order">Order</a>
+    <a href="tel:+17579205550">(757) 920-5550</a>
+  </div>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/7mares.mexican/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
+      </svg>
+    </a>
+    <a href="https://www.facebook.com/7maresmexican/" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H17V4.8c-.3 0-1.2-.1-2.4-.1-2.4 0-4 1.5-4 4.2V11H8v3h2.2v8h3.3Z"/>
+      </svg>
+    </a>
+    <a href="https://www.tiktok.com/@7mares.mexican" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14.9 3c.2 1.8 1.2 3.5 2.9 4.5 1 .6 2.1.9 3.2 1v2.8c-1.5-.1-2.9-.5-4.2-1.2l-.1-.1v6.2a5.9 5.9 0 1 1-5.9-5.9c.4 0 .8 0 1.1.1V13a3.3 3.3 0 0 0-1.1-.2 3.2 3.2 0 1 0 3.2 3.2V3h2.9Z"/>
+      </svg>
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 7 Mares Mexican Grill · Williamsburg, VA</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach((element) => observer.observe(element));
+
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 80) {
+      header.style.padding = '12px 48px';
+      header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+    } else {
+      header.style.padding = '18px 48px';
+      header.style.boxShadow = 'none';
+    }
+  });
+</script>
+</body>
+</html>
